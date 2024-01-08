@@ -91,8 +91,15 @@ public function __construct(string $libelle, float $soldeInitial, string $devise
         return $result;
     }
 
-    // public function virement($soldeInitial, $montant){
-
-    // }
+    public function virement($destinataire, float $montant){
+        if ($montant > 0 && $this->soldeInitial >= $montant){
+            $this->soldeInitial -= $montant;
+            $destinataire->soldeInitial += $montant;
+            return "Virement de ".$montant." € effectué depuis ".$this->libelle." vers ".$destinataire->libelle." <br>" ;
+        }
+        else {
+            return "Solde insuffisant";
+        }
+    }
 
 }

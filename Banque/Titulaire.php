@@ -104,7 +104,7 @@ class Titulaire{
     public function donnerAge(){
         $dateJour= new DateTime();
         $difference= $this->dateNaissance->diff($dateJour);
-        return $difference->format('%Y');
+        return $difference->format('%Y ans');
 
     }
 

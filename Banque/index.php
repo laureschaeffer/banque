@@ -8,5 +8,6 @@ $livA= new Compte("Livret A", 500, "€", $LS);
 $compteCourant= new Compte("Compte courant", 100, "€", $LS);
 
 echo $LS->afficherCompte();
-
+echo $livA->virement($compteCourant, 100);
 echo $livA;
+echo $compteCourant;
